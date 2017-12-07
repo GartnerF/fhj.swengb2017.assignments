@@ -2,9 +2,28 @@
 // see http://fxexperience.com/2011/12/styling-fx-buttons-with-css/
 
 #calculator {
-	-fx-background-color:#00ff00;
+	-fx-background-color:#e6e6e6;
 }
 
 #calculator .grey {
-	-fx-background-color:#ff00ff;
+	-fx-background-color:#888;
+}
+.buttonNumber {
+    -fx-background-color:#bf8040;
+     -fx-text-fill: white;
+}
+.buttonNumber:pressed{
+    -fx-background-color: #996633
+}
+
+
+.buttonMethod {
+    -fx-background-color: #ade09e;
+}
+.buttonMethod:pressed{
+     -fx-background-color:   #8dd477
+}
+
+.gritpane{
+    -fx-background-color: #e6e6e6;
 }

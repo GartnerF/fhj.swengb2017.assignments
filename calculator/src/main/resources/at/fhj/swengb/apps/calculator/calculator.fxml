@@ -1,19 +1,123 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?import javafx.scene.layout.GridPane?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.text.Font?>
 <?import javafx.scene.control.TextField?>
-<GridPane id="calculator" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
-          prefHeight="500.0" prefWidth="500.0" styleClass="gridpane" xmlns="http://javafx.com/javafx/null"
-          xmlns:fx="http://javafx.com/fxml/1" fx:controller="at.fhj.swengb.apps.calculator.CalculatorFxController">
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<GridPane id="calculator" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="400.0" styleClass="gridpane" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="at.fhj.swengb.apps.calculator.CalculatorFxController">
     <children>
-        <Button mnemonicParsing="false" onAction="#sgn" prefHeight="100.0" prefWidth="100.0" styleClass="grey"
-                text="+/-" GridPane.columnIndex="2" GridPane.rowIndex="2">
+        <Button mnemonicParsing="false" onAction="#sgn" prefHeight="50.0" prefWidth="212.0" styleClass="buttonClear" text="CLEAR" GridPane.columnSpan="2" GridPane.rowIndex="3">
+         <GridPane.margin>
+            <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+         </GridPane.margin></Button>
 
-        </Button>
-
-        <TextField fx:id="numberTextField" text="123" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+        <TextField fx:id="numberTextField" alignment="BASELINE_RIGHT" text="0" GridPane.columnIndex="2" GridPane.columnSpan="2" />
+      <Button id="buttonChangeSign" mnemonicParsing="false" onAction="#sgn" prefHeight="50.0" prefWidth="100.0" styleClass="buttonMethod" text="+/-" GridPane.columnIndex="2" GridPane.rowIndex="3">
+         <GridPane.margin>
+            <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+         </GridPane.margin>
+      </Button>
+      <Button mnemonicParsing="false" onAction="#sgn" prefHeight="50.0" prefWidth="100.0" styleClass="buttonMethod" text="/" GridPane.columnIndex="3" GridPane.rowIndex="3">
+         <GridPane.margin>
+            <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+         </GridPane.margin>
+      </Button>
+      <Button mnemonicParsing="false" onAction="#sgn" prefHeight="50.0" prefWidth="100.0" styleClass="buttonMethod" text="x" GridPane.columnIndex="3" GridPane.rowIndex="4">
+         <GridPane.margin>
+            <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+         </GridPane.margin>
+      </Button>
+      <Button mnemonicParsing="false" onAction="#sgn" prefHeight="50.0" prefWidth="100.0" styleClass="buttonMethod" text="+" GridPane.columnIndex="3" GridPane.rowIndex="5">
+         <GridPane.margin>
+            <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+         </GridPane.margin>
+      </Button>
+      <Button mnemonicParsing="false" onAction="#sgn" prefHeight="50.0" prefWidth="100.0" styleClass="buttonMethod" text="-" GridPane.columnIndex="3" GridPane.rowIndex="6">
+         <GridPane.margin>
+            <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+         </GridPane.margin>
+      </Button>
+      <Button mnemonicParsing="false" onAction="#sgn" prefHeight="50.0" prefWidth="100.0" styleClass="buttonEnter" text="Enter" GridPane.columnIndex="3" GridPane.rowIndex="7">
+         <GridPane.margin>
+            <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+         </GridPane.margin>
+      </Button>
+      <Button id="buttonZero" mnemonicParsing="false" onAction="#sgn" prefHeight="50.0" prefWidth="219.0" styleClass="buttonNumber" text="0" GridPane.columnSpan="2" GridPane.rowIndex="7">
+         <GridPane.margin>
+            <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+         </GridPane.margin>
+      </Button>
+      <Button id="buttonOne" mnemonicParsing="false" onAction="#sgn" prefHeight="50.0" prefWidth="100.0" styleClass="buttonNumber" text="1" GridPane.rowIndex="6">
+         <GridPane.margin>
+            <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+         </GridPane.margin>
+      </Button>
+      <Button id="buttonTwo" mnemonicParsing="false" onAction="#sgn" prefHeight="50.0" prefWidth="100.0" styleClass="buttonNumber" text="2" GridPane.columnIndex="1" GridPane.rowIndex="6">
+         <GridPane.margin>
+            <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+         </GridPane.margin>
+      </Button>
+      <Button id="buttonThree" mnemonicParsing="false" onAction="#sgn" prefHeight="50.0" prefWidth="100.0" styleClass="buttonNumber" text="3" GridPane.columnIndex="2" GridPane.rowIndex="6">
+         <GridPane.margin>
+            <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+         </GridPane.margin>
+      </Button>
+      <Button id="buttonFour" mnemonicParsing="false" onAction="#sgn" prefHeight="50.0" prefWidth="100.0" styleClass="buttonNumber" text="4" GridPane.rowIndex="5">
+         <GridPane.margin>
+            <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+         </GridPane.margin>
+      </Button>
+      <Button id="buttonFive" mnemonicParsing="false" onAction="#sgn" prefHeight="50.0" prefWidth="100.0" styleClass="buttonNumber" text="5" GridPane.columnIndex="1" GridPane.rowIndex="5">
+         <GridPane.margin>
+            <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+         </GridPane.margin>
+      </Button>
+      <Button id="buttonSix" mnemonicParsing="false" onAction="#sgn" prefHeight="50.0" prefWidth="100.0" styleClass="buttonNumber" text="6" GridPane.columnIndex="2" GridPane.rowIndex="5">
+         <GridPane.margin>
+            <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+         </GridPane.margin>
+      </Button>
+      <Button id="buttonSeven" mnemonicParsing="false" onAction="#sgn" prefHeight="50.0" prefWidth="100.0" styleClass="buttonNumber" text="7" GridPane.rowIndex="4">
+         <GridPane.margin>
+            <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+         </GridPane.margin>
+      </Button>
+      <Button id="buttonEight" mnemonicParsing="false" onAction="#sgn" prefHeight="91.0" prefWidth="160.0" styleClass="buttonNumber" text="8" GridPane.columnIndex="1" GridPane.rowIndex="4">
+         <GridPane.margin>
+            <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+         </GridPane.margin>
+      </Button>
+      <Button id="buttonNine" mnemonicParsing="false" onAction="#sgn" prefHeight="65.0" prefWidth="120.0" styleClass="buttonNumber" text="9" GridPane.columnIndex="2" GridPane.rowIndex="4">
+         <GridPane.margin>
+            <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+         </GridPane.margin>
+      </Button>
+      <TextField fx:id="numberTextField2" alignment="BASELINE_RIGHT" text="0" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.rowIndex="2" />
+      <TextField fx:id="numberTextField1" alignment="BASELINE_RIGHT" text="0" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.rowIndex="1" />
+      <Button id="buttonComma" mnemonicParsing="false" onAction="#sgn" prefHeight="50.0" prefWidth="100.0" styleClass="buttonMethod" text="," GridPane.columnIndex="2" GridPane.rowIndex="7">
+         <GridPane.margin>
+            <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+         </GridPane.margin>
+      </Button>
     </children>
+   <columnConstraints>
+      <ColumnConstraints maxWidth="100.0" minWidth="65.0" prefWidth="100.0" />
+      <ColumnConstraints maxWidth="100.0" minWidth="65.0" prefWidth="100.0" />
+      <ColumnConstraints maxWidth="100.0" minWidth="71.0" prefWidth="100.0" />
+      <ColumnConstraints maxWidth="100.0" minWidth="10.0" prefWidth="100.0" />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints prefHeight="50.0" />
+      <RowConstraints prefHeight="50.0" />
+      <RowConstraints minHeight="10.0" prefHeight="50.0" />
+      <RowConstraints minHeight="10.0" prefHeight="50.0" />
+      <RowConstraints maxHeight="50.0" minHeight="10.0" prefHeight="50.0" />
+      <RowConstraints minHeight="10.0" prefHeight="50.0" />
+      <RowConstraints minHeight="10.0" prefHeight="50.0" />
+      <RowConstraints minHeight="10.0" prefHeight="50.0" />
+   </rowConstraints>
 
 </GridPane>
