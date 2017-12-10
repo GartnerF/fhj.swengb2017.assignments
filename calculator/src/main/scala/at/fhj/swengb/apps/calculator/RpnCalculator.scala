@@ -1,6 +1,7 @@
 package at.fhj.swengb.apps.calculator
 
 import scala.util.Try
+import java.util.NoSuchElementException
 
 /**
   * Companion object for our reverse polish notation calculator.
@@ -14,8 +15,15 @@ object RpnCalculator {
     * @param s a string representing a calculation, for example '1 2 +'
     * @return
     */
-  def apply(s: String): Try[RpnCalculator] = ???
+  def apply(s: String): Try[RpnCalculator] = {
+    if (s.isEmpty)
+      Try(RpnCalculator())
+    else{
+      val a = s.split(" ").toList.map((b)=>Op(b))
+      (RpnCalculator().push(a))
+    }
 
+  }
 }
 
 /**
@@ -32,7 +40,37 @@ case class RpnCalculator(stack: List[Op] = Nil) {
     * @param op
     * @return
     */
-  def push(op: Op): Try[RpnCalculator] = ???
+  def push(op: Op): Try[RpnCalculator] = {
+    op match {
+      case Val(x) => Try(RpnCalculator(stack :+ op))
+      case Mul => {
+        val a = peek().asInstanceOf[Val]
+        val b = pop()._2.peek().asInstanceOf[Val]
+        val c = List(Mul.eval(a,b))
+        Try(RpnCalculator( stack.init.init ++ c))
+      }
+      case Div => {
+        val a = peek().asInstanceOf[Val]
+        val b = pop()._2.peek().asInstanceOf[Val]
+        val c = List(Div.eval(b,a))
+        Try(RpnCalculator(stack.init.init ++ c))
+      }
+      case Add =>{
+        val a = peek().asInstanceOf[Val]
+        val b = pop()._2.peek().asInstanceOf[Val]
+        val c = List(Add.eval(a,b))
+        val tes = Try(RpnCalculator(stack.init.init ++ c))
+        println(tes.toString)
+        tes
+      }
+      case Sub =>{
+        val a = peek().asInstanceOf[Val]
+        val b = pop()._2.peek().asInstanceOf[Val]
+        val c = List(Sub.eval(a,b))
+        Try(RpnCalculator(stack.init.init ++ c))
+      }
+    }
+  }
 
   /**
     * Pushes val's on the stack.
@@ -42,26 +80,34 @@ case class RpnCalculator(stack: List[Op] = Nil) {
     * @param op
     * @return
     */
-  def push(op: Seq[Op]): Try[RpnCalculator] = ???
+  def push(op: Seq[Op]): Try[RpnCalculator] = {
+    Try(op.foldLeft(RpnCalculator())((acc,ope)=>acc.push(ope).get))
+  }
 
   /**
     * Returns an tuple of Op and a RevPolCal instance with the remainder of the stack.
     *
     * @return
     */
-  def pop(): (Op, RpnCalculator) = ???
+  def pop(): (Op, RpnCalculator) = (stack.last,RpnCalculator(stack.init))
 
   /**
     * If stack is nonempty, returns the top of the stack. If it is empty, this function throws a NoSuchElementException.
     *
     * @return
     */
-  def peek(): Op = ???
+  def peek(): Op ={
+    if(stack.isEmpty)
+      throw new NoSuchElementException("The stack is empty")
+    else
+      stack.last
+  }
+
 
   /**
     * returns the size of the stack.
     *
     * @return
     */
-  def size: Int = ???
+  def size: Int = stack.size
 }

@@ -7,16 +7,27 @@
 | Hours
 | Description
 
-| 29.11.17
-| 1
-| Review of this and that
+| 04.12.17
+| 3
+| Created Buttons, with Css ID and Button ID
 
-| 30.11.17
+| 05.12.17
+| 1.5
+| Made the Css Style for the buttons
+
+| 09.12.17
+| 6
+| Made the Function for the RpnCalculator
+
+| 10.12.17
+| 0.5
+| Redesigned the buttons with accurate Color
+
+| 10.12.17
 | 5
-| implemented css
+| Made Gui working with the RpnCalculator
 
-| 11.07.17
-| 2
-| fixed bugs
+
+
 
 |===

@@ -8,22 +8,52 @@
 #calculator .grey {
 	-fx-background-color:#888;
 }
+
 .buttonNumber {
     -fx-background-color:#bf8040;
      -fx-text-fill: white;
 }
-.buttonNumber:pressed{
-    -fx-background-color: #996633
+.buttonNumber:hover{
+    -fx-background-color:#cc9966;
 }
 
+.buttonNumber:pressed{
+    -fx-background-color:#996633;
+}
 
 .buttonMethod {
-    -fx-background-color: #ade09e;
+    -fx-background-color:#ade09e;
 }
+.buttonMethod:hover{
+     -fx-background-color:#bee7b1;
+}
+
 .buttonMethod:pressed{
-     -fx-background-color:   #8dd477
+     -fx-background-color:#8dd477;
 }
 
 .gritpane{
-    -fx-background-color: #e6e6e6;
+    -fx-background-color:#e6e6e6;
+}
+
+.buttonClear{
+     -fx-background-color: #D6BD62;
+}
+.buttonClear:hover{
+     -fx-background-color: #dac471;
+}
+
+.buttonClear:pressed{
+     -fx-background-color:#BBA34A;
+}
+.buttonEnter{
+     -fx-background-color:#D6BD62;
+}
+
+.buttonEnter:hover{
+     -fx-background-color: #dac471;
+}
+
+.buttonEnter:pressed{
+     -fx-background-color:#BBA34A;
 }
