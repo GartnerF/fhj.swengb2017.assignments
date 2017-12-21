@@ -18,6 +18,15 @@ object BattleShipProtocol {
   }
 
   def convert(g: BattleShipProtobuf.Vessel) : Vessel = {
-    Vessel(NonEmptyString("abc"),BattlePos(1,2),Vertical,5)
+    val name = g.getName
+    val direction = {
+      g.getDirection match {
+        case "H" => Horizontal
+        case "V" => Vertical
+      }
+    }
+    Vessel(NonEmptyString(name),convert(g.getStartPos),direction,g.getSize)
   }
+  def convert(pos: BattlePos): BattleShipProtobuf.Pos = BattleShipProtobuf.Pos.newBuilder().setX(pos.x).setY(pos.y).build()
+  def convert(pos: BattleShipProtobuf.Pos) : BattlePos = BattlePos(pos.getX,pos.getY)
 }
